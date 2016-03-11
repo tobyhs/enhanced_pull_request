@@ -1,3 +1,5 @@
 /.bundle
 /bower_components
 /node_modules
+
+/spec/config.yml
