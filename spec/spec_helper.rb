@@ -1,5 +1,6 @@
-require 'selenium-webdriver'
 require 'yaml'
+
+require 'epr_spec_helper'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -25,22 +26,20 @@ RSpec.configure do |config|
 
   gh_config = YAML.load_file(File.join(__dir__, 'config.yml'))
 
-  config.before :context do
-    @driver = Selenium::WebDriver.for(
-      :chrome, args: ["--load-extension=#{File.join(__dir__, '..')}"]
-    )
+  config.before :suite do
+    EprSpecHelper.driver.get('https://github.com/login')
 
-    @driver.get('https://github.com/login')
-    @driver.find_element(name: 'login').send_keys(gh_config['login'])
-    password_field = @driver.find_element(name: 'password')
+    EprSpecHelper.driver.find_element(name: 'login').
+      send_keys(gh_config['login'])
+    password_field = EprSpecHelper.driver.find_element(name: 'password')
     password_field.send_keys(gh_config['password'])
     password_field.submit
   end
 
-  config.after :context do
-    @driver.find_element(css: '.header-nav-link .avatar').click
-    @driver.find_element(class: 'logout-form').click
+  config.after :suite do
+    EprSpecHelper.driver.find_element(css: '.header-nav-link .avatar').click
+    EprSpecHelper.driver.find_element(class: 'logout-form').click
 
-    @driver.quit
+    EprSpecHelper.driver.quit
   end
 end
