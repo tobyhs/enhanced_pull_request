@@ -13,16 +13,14 @@ RSpec.configure do |config|
 
   config.disable_monkey_patching!
 
-  config.warnings = true
+  # selenium-webdriver is noisy
+  config.warnings = false
 
   if config.files_to_run.one?
     config.default_formatter = 'doc'
   end
 
   config.order = :random
-
-  # selenium-webdriver is noisy
-  config.warnings = false
 
   gh_config = YAML.load_file(File.join(__dir__, 'config.yml'))
 
