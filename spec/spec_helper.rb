@@ -1,5 +1,3 @@
-require 'yaml'
-
 require 'epr_spec_helper'
 
 RSpec.configure do |config|
@@ -22,22 +20,12 @@ RSpec.configure do |config|
 
   config.order = :random
 
-  gh_config = YAML.load_file(File.join(__dir__, 'config.yml'))
-
   config.before :suite do
-    EprSpecHelper.driver.get('https://github.com/login')
-
-    EprSpecHelper.driver.find_element(name: 'login').
-      send_keys(gh_config['login'])
-    password_field = EprSpecHelper.driver.find_element(name: 'password')
-    password_field.send_keys(gh_config['password'])
-    password_field.submit
+    EprSpecHelper.login
   end
 
   config.after :suite do
-    EprSpecHelper.driver.find_element(css: '.header-nav-link .avatar').click
-    EprSpecHelper.driver.find_element(class: 'logout-form').click
-
+    EprSpecHelper.logout
     EprSpecHelper.driver.quit
   end
 end
