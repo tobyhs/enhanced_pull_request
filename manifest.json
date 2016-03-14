@@ -4,5 +4,12 @@
   "version": "0.0.0",
   "description": "Adds some features to GitHub Pull Requests",
   "content_scripts": [
+    {
+      "matches": ["https://github.com/*/*/pull/*"],
+      "js": [
+        "bower_components/jquery/index.js",
+        "content_scripts/conversation.js"
+      ]
+    }
   ]
 }
