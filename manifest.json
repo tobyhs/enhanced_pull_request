@@ -3,13 +3,19 @@
   "name": "Enhanced Pull Request",
   "version": "0.0.0",
   "description": "Adds some features to GitHub Pull Requests",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
   "content_scripts": [
     {
-      "matches": ["https://github.com/*/*/pull/*"],
+      "matches": ["https://github.com/*/*"],
       "js": [
         "bower_components/jquery/index.js",
+        "content_scripts/base.js",
         "content_scripts/conversation.js"
       ]
     }
-  ]
+  ],
+  "permissions": ["webNavigation"]
 }
