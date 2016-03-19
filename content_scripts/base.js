@@ -1,4 +1,4 @@
-var EnhancedPullRequest = {
+const EnhancedPullRequest = {
   _callbacks: [],
 
   /**
