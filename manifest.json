@@ -14,9 +14,11 @@
       "js": [
         "bower_components/jquery/index.js",
         "content_scripts/base.js",
-        "content_scripts/conversation.js"
+        "content_scripts/conversation.js",
+        "content_scripts/reply.js"
       ]
     }
   ],
-  "permissions": ["webNavigation"]
+  "permissions": ["webNavigation"],
+  "web_accessible_resources": ["images/*"]
 }

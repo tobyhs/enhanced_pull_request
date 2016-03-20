@@ -21,4 +21,17 @@ RSpec.describe 'Conversation page' do
       }.from([false, false]).to([true, true])
     end
   end
+
+  context 'when clicking on the reply icon of an issue comment', reply: true do
+    it 'fills in the new comment field with quoted text' do
+      driver.
+        find_element(css: '#issuecomment-196083866 .epr-reply-button').click
+
+      comment_field = driver.find_element(id: 'new_comment_field')
+      expect(comment_field.attribute('value')).to eq(
+        "\n\n> Fake self-reply\n> \n> > Original comment"
+      )
+      expect(comment_field).to eq(driver.switch_to.active_element)
+    end
+  end
 end
