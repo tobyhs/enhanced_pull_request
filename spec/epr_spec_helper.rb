@@ -3,6 +3,11 @@ require 'yaml'
 
 # Utility methods for tests
 module EprSpecHelper
+  # @note
+  #   I know, a singleton might be improper, but I didn't want tests to perform
+  #   too many logins and logouts in case GitHub finds this activity
+  #   suspicious.
+  #
   # @return [Selenium::WebDriver::Driver]
   #   Chrome driver instance with the enhanced_pull_request extension loaded
   def self.driver
