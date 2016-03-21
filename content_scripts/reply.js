@@ -31,9 +31,9 @@ EnhancedPullRequest.load(function () {
    * @param {jQuery} $replyTextarea - textarea to add the reply text to
    */
   function addReplyTextTo(commentContainer, $replyTextarea) {
-    $replyTextarea
-      .val(replyTextFor($('.comment-form-textarea', commentContainer).val()))
-      .focus();
+    const commentBody = $('.js-comment-body', commentContainer).html();
+    const replyText = replyTextFor(toMarkdown(commentBody, {gfm: true}));
+    $replyTextarea.val(replyText).focus();
     $replyTextarea[0].setSelectionRange(0, 0);
   }
 
