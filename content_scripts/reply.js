@@ -45,4 +45,19 @@ EnhancedPullRequest.load(function () {
       addReplyTextTo(commentContainer, $newCommentField);
     });
   });
+
+  // Replies for line comments
+  $('.line-comments').each(function () {
+    const $commentButton = $('.js-toggle-inline-comment-form', this);
+    const $commentTextarea = $('.inline-comment-form textarea', this);
+
+    $('.commit-comment', this).each(function (i, commentContainer) {
+      addReplyIconTo(commentContainer).click(function () {
+        if ($commentTextarea.is(':hidden')) {
+          $commentButton.click();
+        }
+        addReplyTextTo(commentContainer, $commentTextarea);
+      });
+    });
+  });
 });
