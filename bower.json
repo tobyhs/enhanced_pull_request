@@ -1,13 +1,6 @@
 {
   "name": "enhanced_pull_request",
   "private": true,
-  "ignore": [
-    "**/.*",
-    "bower_components",
-    "node_modules",
-    "test",
-    "tests"
-  ],
   "dependencies": {
     "jquery": "http://code.jquery.com/jquery-2.2.1.min.js"
   }
