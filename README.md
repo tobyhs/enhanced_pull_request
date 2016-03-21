@@ -7,6 +7,7 @@ spoiled with from other code review tools) to GitHub Pull Requests.
 # Features
 
 * Button/link to show/hide all comments on outdated diffs in Conversation
+* Replies (to emulate conversation threading)
 
 
 # Development
