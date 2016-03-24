@@ -3,6 +3,7 @@
   "name": "Enhanced Pull Request",
   "version": "0.0.0",
   "description": "Adds some features to GitHub Pull Requests",
+  "icons": {"48": "images/icon-48.png", "128": "images/icon-128.png"},
   "homepage_url": "https://github.com/tobyhs/enhanced_pull_request",
   "background": {
     "scripts": ["background.js"],
