@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<svg width="128" height="128" viewBox="0 0 128 128" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <defs>
+    <circle id="CommitDot" r="4" stroke="black" stroke-width="3" fill="white"/>
+  </defs>
+
+  <rect fill="white" x="16" y="16" width="96" height="96"/>
+
+  <line x1="36" y1="26" x2="92" y2="26" stroke="green" stroke-width="6"/>
+  <line x1="36" y1="64" x2="92" y2="64" stroke="red" stroke-width="6"/>
+  <line x1="36" y1="102" x2="92" y2="102" stroke="purple" stroke-width="6"/>
+  <line x1="36" y1="26" x2="36" y2="102" stroke="black" stroke-width="6"/>
+
+  <use x="36" y="26" xlink:href="#CommitDot"/>
+  <use x="92" y="26" xlink:href="#CommitDot"/>
+  <use x="36" y="64" xlink:href="#CommitDot"/>
+  <use x="92" y="64" xlink:href="#CommitDot"/>
+  <use x="36" y="102" xlink:href="#CommitDot"/>
+  <use x="92" y="102" xlink:href="#CommitDot"/>
+</svg>
