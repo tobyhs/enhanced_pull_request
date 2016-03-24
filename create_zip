@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Creates a zip file for uploading to the Chrome Web Store
+
+zip -r enhanced_pull_request.zip \
+  background.js bower_components content_scripts images manifest.json
