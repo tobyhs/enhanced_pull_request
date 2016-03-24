@@ -1,5 +1,8 @@
 # Enhanced Pull Request
 
+Chrome Web Store URL:
+https://chrome.google.com/webstore/detail/enhanced-pull-request/pnepdakkbfhmgjhdfhgdkpjpjgfnnabl
+
 This is an attempt at a Chrome extension to add features (that I have been
 spoiled with from other code review tools) to GitHub Pull Requests.
 
