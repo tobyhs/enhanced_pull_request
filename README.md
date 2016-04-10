@@ -9,8 +9,10 @@ spoiled with from other code review tools) to GitHub Pull Requests.
 
 # Features
 
-* Button/link to show/hide all comments on outdated diffs in Conversation
-* Replies (to emulate conversation threading)
+* Link to show/hide all comments on outdated diffs in Conversation ("Toggle
+  Outdated Diff Comments" link below the "Conversation" tab)
+* Replies to emulate conversation threading (reply icon on the right side of a
+  comment header)
 
 
 # Development
