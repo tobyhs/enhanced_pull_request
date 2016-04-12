@@ -13,6 +13,8 @@ spoiled with from other code review tools) to GitHub Pull Requests.
   Outdated Diff Comments" link below the "Conversation" tab)
 * Replies to emulate conversation threading (reply icon on the right side of a
   comment header)
+* See the diff of one file in one window as opposed to all changes in one
+  window ("One-File Diff" link below the tab bar)
 
 
 # Development
