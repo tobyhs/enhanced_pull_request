@@ -20,8 +20,8 @@ module EprSpecHelper
   def self.login
     driver.get('https://github.com/login')
 
-    driver.find_element(name: 'login').send_keys(config['login'])
-    password_field = EprSpecHelper.driver.find_element(name: 'password')
+    driver.find_element(:name, 'login').send_keys(config['login'])
+    password_field = EprSpecHelper.driver.find_element(:name, 'password')
     password_field.send_keys(config['password'])
     password_field.submit
   end
@@ -30,10 +30,10 @@ module EprSpecHelper
   #
   # @note This assumes the driver is on a page with the avatar dropdown menu
   def self.logout
-    avatar_icon = driver.find_element(css: '.header-nav-link .avatar')
+    avatar_icon = driver.find_element(:css, '.header-nav-link .avatar')
     avatar_icon.location_once_scrolled_into_view
     avatar_icon.click
-    driver.find_element(:class => 'logout-form').click
+    driver.find_element(:class, 'logout-form').click
   end
 
   # @return [Hash{String => Object}] GitHub credentials for testing

@@ -12,11 +12,11 @@ RSpec.describe 'Conversation page' do
   context 'when clicking on the .epr-toggle-outdated-comments button' do
     it 'shows the comments on the outdated diffs' do
       outdated_comments = driver.find_elements(
-        css: '#discussion_r55944516, #discussion_r55944545'
+        :css, '#discussion_r55944516, #discussion_r55944545'
       )
 
       expect {
-        driver.find_element(:class => 'epr-toggle-outdated-comments').click
+        driver.find_element(:class, 'epr-toggle-outdated-comments').click
       }.to change {
         outdated_comments.map(&:displayed?)
       }.from([false, false]).to([true, true])
@@ -24,11 +24,11 @@ RSpec.describe 'Conversation page' do
   end
 
   context 'when clicking on the reply icon of an issue comment', reply: true do
-    let(:comment_field) { driver.find_element(id: 'new_comment_field') }
+    let(:comment_field) { driver.find_element(:id, 'new_comment_field') }
 
     before do
       driver.
-        find_element(css: '#issuecomment-196083866 .epr-reply-button').click
+        find_element(:css, '#issuecomment-196083866 .epr-reply-button').click
     end
 
     it 'fills in the new comment field with quoted text' do
