@@ -1,8 +1,8 @@
 EnhancedPullRequest.load(function () {
   // See the diff of one file in a window (as opposed to diffs of all files)
 
-  const diffLinks = $('.toc-select .select-menu-item-text').map(function () {
-    const fileName = $('.description', this).text().trim();
+  const diffLinks = $('div[data-path]').map(function () {
+    const fileName = this.getAttribute('data-path');
     const url = new URL(location);
     const params = new URLSearchParams();
     params.set('eprFocus', fileName);
