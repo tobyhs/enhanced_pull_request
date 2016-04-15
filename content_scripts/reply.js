@@ -1,4 +1,4 @@
-EnhancedPullRequest.load(function () {
+(function () {
   /**
    * Adds a reply icon to the given context.
    *
@@ -39,27 +39,29 @@ EnhancedPullRequest.load(function () {
     $replyTextarea[0].setSelectionRange(0, 0);
   }
 
-  const $newCommentField = $('#new_comment_field');
+  EnhancedPullRequest.load(function () {
+    const $newCommentField = $('#new_comment_field');
 
-  // Replies for issue comments
-  $('div[id|="issuecomment"]').each(function (i, commentContainer) {
-    addReplyIconTo(commentContainer).click(function () {
-      addReplyTextTo(commentContainer, $newCommentField);
-    });
-  });
-
-  // Replies for line comments
-  $('.line-comments').each(function () {
-    const $commentButton = $('.js-toggle-inline-comment-form', this);
-    const $commentTextarea = $('.inline-comment-form textarea', this);
-
-    $('.commit-comment', this).each(function (i, commentContainer) {
+    // Replies for issue comments
+    $('div[id|="issuecomment"]').each(function (i, commentContainer) {
       addReplyIconTo(commentContainer).click(function () {
-        if ($commentTextarea.is(':hidden')) {
-          $commentButton.click();
-        }
-        addReplyTextTo(commentContainer, $commentTextarea);
+        addReplyTextTo(commentContainer, $newCommentField);
+      });
+    });
+
+    // Replies for line comments
+    $('.line-comments').each(function () {
+      const $commentButton = $('.js-toggle-inline-comment-form', this);
+      const $commentTextarea = $('.inline-comment-form textarea', this);
+
+      $('.commit-comment', this).each(function (i, commentContainer) {
+        addReplyIconTo(commentContainer).click(function () {
+          if ($commentTextarea.is(':hidden')) {
+            $commentButton.click();
+          }
+          addReplyTextTo(commentContainer, $commentTextarea);
+        });
       });
     });
   });
-});
+})();
