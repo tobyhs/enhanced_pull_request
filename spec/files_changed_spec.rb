@@ -22,17 +22,19 @@ RSpec.describe 'Files changed page' do
 
     it 'has a title with the file name' do
       Selenium::WebDriver::Wait.new(
-        timeout: 2, message: 'Title does not contain the file name'
+        message: 'Title does not contain the file name'
       ).until { driver.title.start_with?('sandbox/hello.rb') }
     end
 
     it 'only shows the diff of the selected file' do
+      Selenium::WebDriver::Wait.new.until do
+        !driver.
+          find_element(:css, '.file-header[data-path="sandbox/hello.py"]').
+          displayed?
+      end
       expect(
         driver.find_element(:css, '.file-header[data-path="sandbox/hello.rb"]')
       ).to be_displayed
-      expect(
-        driver.find_element(:css, '.file-header[data-path="sandbox/hello.py"]')
-      ).not_to be_displayed
     end
   end
 end
