@@ -15,8 +15,8 @@ const EnhancedPullRequest = {
   MdConverters: [
     {
       // emojis
-      filter: node => node.className === 'emoji',
-      replacement: (content, node) => node.alt
+      filter: 'g-emoji',
+      replacement: (content, node) => ':' + node.getAttribute('alias') + ':'
     }
   ]
 };
