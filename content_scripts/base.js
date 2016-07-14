@@ -9,16 +9,7 @@ const EnhancedPullRequest = {
   load: function (callback) {
     this._callbacks.unshift(callback);
     callback();
-  },
-
-  // to-markdown converters (workarounds for inaccurate conversions)
-  MdConverters: [
-    {
-      // emojis
-      filter: 'g-emoji',
-      replacement: (content, node) => ':' + node.getAttribute('alias') + ':'
-    }
-  ]
+  }
 };
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {

@@ -24,6 +24,15 @@
     return '\n\n> ' + message.replace(/\n/g, '\n> ');
   }
 
+  // to-markdown converters (workarounds for GitHub-specific conversions)
+  const markdownConverters = [
+    {
+      // emojis
+      filter: 'g-emoji',
+      replacement: (content, node) => ':' + node.getAttribute('alias') + ':'
+    }
+  ]
+
   /**
    * Adds reply text.
    *
@@ -33,7 +42,7 @@
   function addReplyTextTo(commentContainer, $replyTextarea) {
     const commentBody = $('.js-comment-body', commentContainer).html();
     const replyText = replyTextFor(toMarkdown(
-      commentBody, {gfm: true, converters: EnhancedPullRequest.MdConverters}
+      commentBody, {gfm: true, converters: markdownConverters}
     ));
     $replyTextarea.val(replyText).focus();
     $replyTextarea[0].setSelectionRange(0, 0);
