@@ -2,7 +2,7 @@
   "name": "enhanced_pull_request",
   "private": true,
   "dependencies": {
-    "jquery": "http://code.jquery.com/jquery-2.2.1.min.js",
+    "jquery": "http://code.jquery.com/jquery-3.1.0.min.js",
     "to-markdown": "3.0.0"
   }
 }
