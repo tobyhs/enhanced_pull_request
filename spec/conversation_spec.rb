@@ -33,7 +33,7 @@ RSpec.describe 'Conversation page' do
 
     it 'fills in the new comment field with quoted text' do
       expect(comment_field.attribute('value')).to eq(
-        "\n\n> Fake self-reply\n> \n> > Original :+1:"
+        "\n\n> Fake self-reply @tobyhs\n> \n> > Original :+1:"
       )
     end
 

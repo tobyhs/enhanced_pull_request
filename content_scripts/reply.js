@@ -30,6 +30,11 @@
       // emojis
       filter: 'g-emoji',
       replacement: (content, node) => ':' + node.getAttribute('alias') + ':'
+    },
+    {
+      // user mentions
+      filter: node => node.className === 'user-mention',
+      replacement: content => content
     }
   ]
 
