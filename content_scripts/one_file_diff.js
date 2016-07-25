@@ -6,7 +6,7 @@ EnhancedPullRequest.load(function () {
     const url = new URL(location);
     const params = new URLSearchParams();
     params.set('eprFocus', fileName);
-    url.search = '?' + params.toString();
+    url.search = `?${params.toString()}`;
 
     const link = $('<a class="epr epr-one-file-diff"/>')
       .attr({href: url}).text(fileName);
@@ -23,12 +23,11 @@ EnhancedPullRequest.load(function () {
 
   const file = new URLSearchParams(location.search.slice(1)).get('eprFocus');
   if (!file) return;
-  const fileHeader = $('div[data-path="' + escape(file) + '"]')[0];
+  const fileHeader = $(`div[data-path="${escape(file)}"]`)[0];
   if (!fileHeader) return;
 
-  const pathComponents = location.pathname.split('/');
-  document.title = file + ' - ' + pathComponents[1] + '/' + pathComponents[2] +
-    ' #' + pathComponents[4];
+  const [blank, owner, repo, pull, prNumber] = location.pathname.split('/');
+  document.title = `${file} - ${owner}/${repo} #${prNumber}`;
 
   $('.file.js-details-container').each(function () {
     if (!$.contains(this, fileHeader)) {

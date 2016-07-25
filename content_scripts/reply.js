@@ -21,7 +21,7 @@
    * @returns {String} quoted text for replying (in Markdown)
    */
   function replyTextFor(message) {
-    return '\n\n> ' + message.replace(/\n/g, '\n> ');
+    return `\n\n> ${message.replace(/\n/g, '\n> ')}`;
   }
 
   // to-markdown converters (workarounds for GitHub-specific conversions)
@@ -29,7 +29,7 @@
     {
       // emojis
       filter: 'g-emoji',
-      replacement: (content, node) => ':' + node.getAttribute('alias') + ':'
+      replacement: (content, node) => `:${node.getAttribute('alias')}:`
     },
     {
       // user mentions
