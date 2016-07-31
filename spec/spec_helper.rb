@@ -1,3 +1,5 @@
+require 'byebug'
+
 require 'epr_spec_helper'
 
 RSpec.configure do |config|

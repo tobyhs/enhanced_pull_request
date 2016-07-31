@@ -2,6 +2,7 @@
 /bower_components
 /node_modules
 
+.byebug_history
 /spec/config.yml
 
 *.crx
