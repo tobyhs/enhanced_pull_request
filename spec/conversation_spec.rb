@@ -42,5 +42,15 @@ RSpec.describe 'Conversation page' do
     end
   end
 
+  context 'on an issue comment with an approval message' do
+    it 'has a green background' do
+      comment_body = driver.find_element(
+        :css, '#issuecomment-236418593 .js-comment-body'
+      )
+      bg_color = comment_body.css_value('background-color')
+      expect(bg_color).to eq('rgba(153, 255, 153, 1)')
+    end
+  end
+
   it_behaves_like 'a page with line comment replies'
 end
