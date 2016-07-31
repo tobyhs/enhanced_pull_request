@@ -15,6 +15,7 @@ spoiled with from other code review tools) to GitHub Pull Requests.
   comment header)
 * See the diff of one file in one window as opposed to all changes in one
   window ("One-File Diff" link below the tab bar)
+* Give approval comments (like "lgtm") a green background
 
 
 # Development
