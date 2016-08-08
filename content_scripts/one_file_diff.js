@@ -1,4 +1,4 @@
-EnhancedPullRequest.load(function () {
+EnhancedPullRequest.register_cb(function () {
   // See the diff of one file in a window (as opposed to diffs of all files)
 
   const diffLinks = $('div[data-path]').map(function () {

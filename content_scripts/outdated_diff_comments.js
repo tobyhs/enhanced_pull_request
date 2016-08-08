@@ -1,5 +1,5 @@
 (function () {
-  EnhancedPullRequest.load(function () {
+  EnhancedPullRequest.register_cb(function () {
     // Button/link to show/hide comments on outdated diffs
     $('<button type="button">Toggle Outdated Diff Comments</button>')
       .addClass('epr epr-toggle-outdated-comments btn-link')

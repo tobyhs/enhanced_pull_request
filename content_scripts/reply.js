@@ -53,7 +53,7 @@
     $replyTextarea[0].setSelectionRange(0, 0);
   }
 
-  EnhancedPullRequest.load(function () {
+  EnhancedPullRequest.register_cb(function () {
     const $newCommentField = $('#new_comment_field');
 
     // Replies for issue comments
