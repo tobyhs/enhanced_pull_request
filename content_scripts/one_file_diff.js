@@ -8,7 +8,7 @@ EnhancedPullRequest.register_cb(function () {
     params.set('eprFocus', fileName);
     url.search = `?${params.toString()}`;
 
-    const link = $('<a class="epr epr-one-file-diff"/>')
+    const link = $('<a class="epr epr-one-file-diff" data-skip-pjax/>')
       .attr({href: url}).text(fileName);
     return $('<div class="epr"/>').append(link)[0];
   }).hide().insertAfter('.pr-toolbar.js-sticky');
