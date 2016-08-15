@@ -19,8 +19,8 @@
         "content_scripts/base.js",
         "content_scripts/approvals.js",
         "content_scripts/reply.js",
-        "content_scripts/one_file_diff.js",
-        "content_scripts/outdated_diff_comments.js",
+        "content_scripts/oneFileDiff.js",
+        "content_scripts/outdatedDiffComments.js",
         "content_scripts/main.js"
       ]
     }
