@@ -1,16 +1,24 @@
-(function () {
+EnhancedPullRequest.approvals = {
   // Regular expressions to determine whether an issue comment is an approval
-  const APPROVALS = [/lgtm/i, /alias="(\+1|ship|shipit)"/];
+  APPROVALS: [/lgtm/i, /alias="(\+1|ship|shipit)"/],
 
-  EnhancedPullRequest.register_cb(function () {
-    // Give approvals a green background
+  BG_COLOR: '#99ff99',
+
+  /**
+   * Gives issue comments with approvals a green background.
+   */
+  load: function () {
+    const approvals = EnhancedPullRequest.approvals;
+
     $('div[id|="issuecomment"]').each(function (i, commentContainer) {
       const commentBody = $('.js-comment-body', commentContainer);
       const commentText = commentBody.html();
 
-      if (APPROVALS.some(regEx => commentText.match(regEx))) {
-        commentBody.css('background-color', '#99ff99');
+      if (approvals.APPROVALS.some(regEx => commentText.match(regEx))) {
+        commentBody.css('background-color', approvals.BG_COLOR);
       }
     });
-  });
-})();
+  }
+};
+
+EnhancedPullRequest.register_cb(EnhancedPullRequest.approvals.load);
