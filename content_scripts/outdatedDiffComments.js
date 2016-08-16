@@ -8,6 +8,6 @@ EnhancedPullRequest.outdatedDiffComments = {
       .click(() => $('.discussion-item-toggle-closed').click())
       .prependTo('.pull-discussion-timeline');
   }
-}
+};
 
 EnhancedPullRequest.register_cb(EnhancedPullRequest.outdatedDiffComments.load);
