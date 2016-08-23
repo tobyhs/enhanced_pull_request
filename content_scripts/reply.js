@@ -1,4 +1,4 @@
-(function () {
+EnhancedPullRequest.reply = (function () {
   /**
    * Adds a reply icon to the given context.
    *
@@ -36,7 +36,7 @@
       filter: node => node.className === 'user-mention',
       replacement: content => content
     }
-  ]
+  ];
 
   /**
    * Adds reply text.
@@ -53,7 +53,10 @@
     $replyTextarea[0].setSelectionRange(0, 0);
   }
 
-  EnhancedPullRequest.register_cb(function () {
+  /**
+   * Adds reply icons to comment containers.
+   */
+  function load() {
     const $newCommentField = $('#new_comment_field');
 
     // Replies for issue comments
@@ -77,5 +80,9 @@
         });
       });
     });
-  });
+  }
+
+  return {addReplyIconTo, replyTextFor, addReplyTextTo, load};
 })();
+
+EnhancedPullRequest.register_cb(EnhancedPullRequest.reply.load);
