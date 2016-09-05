@@ -9,8 +9,8 @@ from other code review tools) to GitHub Pull Requests.
 
 # Features
 
-* Link to show/hide all comments on outdated diffs in Conversation ("Toggle
-  Outdated Diff Comments" link below the "Conversation" tab)
+* Links to show/hide all comments on outdated diffs in Conversation (links
+  after "Outdated Diff Comments: " below the "Conversation" tab)
 * Replies to emulate conversation threading (reply icon on the right side of a
   comment header)
 * See the diff of one file in one window as opposed to all changes in one

@@ -1,12 +1,23 @@
 EnhancedPullRequest.outdatedDiffComments = {
   /**
-   * Adds a button to toggle the visibility of comments on outdated diffs.
+   * Adds buttons to show or hide comments on outdated diffs.
    */
   load: function () {
-    $('<button type="button">Toggle Outdated Diff Comments</button>')
-      .addClass('epr epr-toggle-outdated-comments btn-link')
-      .click(() => $('.discussion-item-toggle-closed').click())
-      .prependTo('.pull-discussion-timeline');
+    const $container = $('<div class="epr">Outdated Diff Comments: </div>');
+
+    $('<button type="button">Show</button>')
+      .addClass('epr epr-show-outdated-comments btn-link')
+      .click(() => $('.discussion-item-toggle-closed:visible').click())
+      .appendTo($container);
+
+    $container.append(' ');
+
+    $('<button type="button">Hide</button>')
+      .addClass('epr epr-hide-outdated-comments btn-link')
+      .click(() => $('.discussion-item-toggle-open:visible').click())
+      .appendTo($container);
+
+    $container.prependTo('.pull-discussion-timeline');
   }
 };
 
