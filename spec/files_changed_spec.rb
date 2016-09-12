@@ -17,7 +17,7 @@ RSpec.describe 'Files changed page' do
     unless driver.find_element(:class, 'epr-one-file-diff').displayed?
       driver.find_element(:id, 'one-file-diff-btn').click
     end
-    link = "#{pr_url}?eprFocus=sandbox/hello.rb"
+    link = "#{pr_url}?eprFocus=sandbox%2Fhello.rb"
     expect(driver.find_element(:css, %(a[href="#{link}"]))).to be_displayed
   end
 
