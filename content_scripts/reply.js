@@ -17,8 +17,8 @@ EnhancedPullRequest.reply = (function () {
   /**
    * Quotes the given message to form a reply.
    *
-   * @param {String} message - original message (in Markdown)
-   * @returns {String} quoted text for replying (in Markdown)
+   * @param {string} message - original message (in Markdown)
+   * @returns {string} quoted text for replying (in Markdown)
    */
   function replyTextFor(message) {
     return `\n\n> ${message.replace(/\n/g, '\n> ')}`;
