@@ -11,9 +11,7 @@ RSpec.describe 'Conversation page' do
 
   context 'when clicking on the Outdated Diff Comments buttons' do
     it 'shows and hides the comments on the outdated diffs' do
-      outdated_comments = driver.find_elements(
-        :css, '#discussion_r55944516, #discussion_r55944545'
-      )
+      outdated_comments = driver.find_elements(:css, '#r55944516, #r55944545')
 
       [
         ['epr-show-outdated-comments', true],
