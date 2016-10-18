@@ -3,7 +3,7 @@ RSpec.shared_examples 'a page with line comment replies' do
     let(:comment_field) do
       # Sometimes there is more than one textarea with the same id
       driver.find_elements(
-        :css, "textarea[id$='_diff-780594414fe50c0ffbb11dfe104c53e4_1']"
+        :id, 'new_inline_comment_diff_diff-780594414fe50c0ffbb11dfe104c53e4_55945068_1'
       ).find(&:displayed?)
     end
 
