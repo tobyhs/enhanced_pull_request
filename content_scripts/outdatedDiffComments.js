@@ -7,14 +7,14 @@ EnhancedPullRequest.outdatedDiffComments = {
 
     $('<button type="button">Show</button>')
       .addClass('epr epr-show-outdated-comments btn-link')
-      .click(() => $('.discussion-item-toggle-closed:visible').click())
+      .click(() => $('.discussion-item-toggle-closed:visible, .show-outdated-button:visible').click())
       .appendTo($container);
 
     $container.append(' ');
 
     $('<button type="button">Hide</button>')
       .addClass('epr epr-hide-outdated-comments btn-link')
-      .click(() => $('.discussion-item-toggle-open:visible').click())
+      .click(() => $('.discussion-item-toggle-open:visible, .hide-outdated-button:visible').click())
       .appendTo($container);
 
     $container.prependTo('.pull-discussion-timeline');
