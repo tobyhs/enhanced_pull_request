@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    byebug (9.0.5)
+    byebug (9.1.0)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     diff-lcs (1.2.5)
@@ -32,9 +32,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug (= 9.0.5)
+  byebug (= 9.1.0)
   rspec (= 3.4.0)
   selenium-webdriver (= 2.52.0)
 
 BUNDLED WITH
-   1.11.2
+   1.14.0
