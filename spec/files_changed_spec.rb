@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'support/line_comment_replies_shared_examples'
 
 RSpec.describe 'Files changed page' do
   let(:driver) { EprSpecHelper.driver }
@@ -10,8 +9,6 @@ RSpec.describe 'Files changed page' do
   before do
     driver.get(pr_url) unless driver.current_url == pr_url
   end
-
-  it_behaves_like 'a page with line comment replies'
 
   it 'has one-file diff links' do
     unless driver.find_element(:class, 'epr-one-file-diff').displayed?

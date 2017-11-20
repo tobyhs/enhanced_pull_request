@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'support/line_comment_replies_shared_examples'
 
 RSpec.describe 'Conversation page' do
   let(:driver) { EprSpecHelper.driver }
@@ -68,6 +67,4 @@ RSpec.describe 'Conversation page' do
       end
     end
   end
-
-  it_behaves_like 'a page with line comment replies'
 end

@@ -13,8 +13,8 @@ from other code review tools) to GitHub Pull Requests.
   after "Outdated Diff Comments: " below the "Conversation" tab)
 * See the diff of one file in one window as opposed to all changes in one
   window ("One-File Diff" link below the tab bar)
-* Replies to emulate conversation threading (reply icon on the right side of a
-  comment header); this isn't as useful now that GitHub added message threads
+* Replies that quote issue comments to emulate conversation threading (reply
+  icon on the right side of an issue comment header)
 * Give approval comments (like "lgtm") a green background; this isn't as useful
   now that GitHub provides an "Approve" radio button
 
