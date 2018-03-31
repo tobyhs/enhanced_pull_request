@@ -15,9 +15,6 @@ from other code review tools) to GitHub Pull Requests.
   window ("One-File Diff" link below the tab bar)
 * Replies that quote issue comments to emulate conversation threading (reply
   icon on the right side of an issue comment header)
-* Give approval comments (like "lgtm") a green background; this isn't as useful
-  now that GitHub provides an "Approve" radio button
-
 
 # Development
 
