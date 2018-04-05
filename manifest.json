@@ -17,7 +17,6 @@
         "bower_components/jquery/index.js",
         "bower_components/to-markdown/dist/to-markdown.js",
         "content_scripts/base.js",
-        "content_scripts/approvals.js",
         "content_scripts/reply.js",
         "content_scripts/oneFileDiff.js",
         "content_scripts/outdatedDiffComments.js",
