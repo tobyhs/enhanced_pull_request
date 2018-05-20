@@ -1,4 +1,15 @@
 EnhancedPullRequest.reply = (function () {
+  const turndownService = new TurndownService()
+    .use(turndownPluginGfm.gfm)
+    .addRule('emoji', {
+      filter: 'g-emoji',
+      replacement: (content, node) => `:${node.getAttribute('alias')}:`,
+    })
+    .addRule('user-mention', {
+      filter: node => node.className === 'user-mention',
+      replacement: content => content,
+    });
+
   /**
    * Adds a reply icon to the given context.
    *
@@ -24,20 +35,6 @@ EnhancedPullRequest.reply = (function () {
     return `\n\n> ${message.replace(/\n/g, '\n> ')}`;
   }
 
-  // to-markdown converters (workarounds for GitHub-specific conversions)
-  const markdownConverters = [
-    {
-      // emojis
-      filter: 'g-emoji',
-      replacement: (content, node) => `:${node.getAttribute('alias')}:`
-    },
-    {
-      // user mentions
-      filter: node => node.className === 'user-mention',
-      replacement: content => content
-    }
-  ];
-
   /**
    * Adds reply text.
    *
@@ -46,9 +43,7 @@ EnhancedPullRequest.reply = (function () {
    */
   function addReplyTextTo(commentContainer, $replyTextarea) {
     const commentBody = $('.js-comment-body', commentContainer).html();
-    const replyText = replyTextFor(toMarkdown(
-      commentBody, {gfm: true, converters: markdownConverters}
-    ));
+    const replyText = replyTextFor(turndownService.turndown(commentBody));
     $replyTextarea.val(replyText).focus();
     $replyTextarea[0].setSelectionRange(0, 0);
   }
