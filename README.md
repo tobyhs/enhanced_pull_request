@@ -19,8 +19,7 @@ from other code review tools) to GitHub Pull Requests.
 # Development
 
 Install Node.js and this project's dependencies (run `npm install` from the
-project root). Then, install bower dependencies with `node_modules/.bin/bower
-install`.
+project root).
 
 
 # Tests
