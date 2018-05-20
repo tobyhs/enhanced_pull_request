@@ -14,8 +14,8 @@
     {
       "matches": ["https://github.com/*/*"],
       "js": [
-        "bower_components/jquery/index.js",
-        "bower_components/to-markdown/dist/to-markdown.js",
+        "node_modules/jquery/dist/jquery.min.js",
+        "node_modules/to-markdown/dist/to-markdown.js",
         "content_scripts/base.js",
         "content_scripts/reply.js",
         "content_scripts/oneFileDiff.js",
