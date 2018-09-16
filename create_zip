@@ -6,6 +6,4 @@ set -eu
 
 zip -r enhanced_pull_request.zip \
   background.js content_scripts images manifest.json \
-  node_modules/jquery/dist/jquery.min.js \
-  node_modules/turndown/dist/turndown.js \
-  node_modules/turndown-plugin-gfm/dist/turndown-plugin-gfm.js
+  node_modules/jquery/dist/jquery.min.js

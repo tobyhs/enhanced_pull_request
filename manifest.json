@@ -15,8 +15,6 @@
       "matches": ["https://github.com/*/*"],
       "js": [
         "node_modules/jquery/dist/jquery.min.js",
-        "node_modules/turndown/dist/turndown.js",
-        "node_modules/turndown-plugin-gfm/dist/turndown-plugin-gfm.js",
         "content_scripts/base.js",
         "content_scripts/oneFileDiff.js",
         "content_scripts/outdatedDiffComments.js",
