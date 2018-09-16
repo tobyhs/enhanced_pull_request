@@ -13,8 +13,7 @@ from other code review tools) to GitHub Pull Requests.
   after "Outdated Diff Comments: " below the "Conversation" tab)
 * See the diff of one file in one window as opposed to all changes in one
   window ("One-File Diff" link below the tab bar)
-* Replies that quote issue comments to emulate conversation threading (reply
-  icon on the right side of an issue comment header)
+
 
 # Development
 

@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<svg version="1.1" width="16" height="16" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-  <path
-    d="M 128 128 Q 128 44, 64 44 V 0 L 0 64 L 64 128 V 84 Q 128 84, 128 128"
-    fill="#767676"
-  />
-</svg>
