@@ -10,18 +10,15 @@ RSpec.describe 'Conversation page' do
 
   context 'when clicking on the Outdated Diff Comments buttons' do
     it 'shows and hides the comments on the outdated diffs' do
-      outdated_comments = driver.find_elements(:css, '#r55944545, #discussion_r84420650')
-
-      [
-        ['epr-show-outdated-comments', true],
-        ['epr-hide-outdated-comments', false],
-      ].each do |class_name, displayed|
-        expect {
-          driver.find_element(:class, class_name).click
-        }.to change {
-          outdated_comments.map(&:displayed?).uniq
-        }.from([!displayed]).to([displayed])
+      driver.find_element(:class, 'epr-show-outdated-comments').click
+      outdated_comment = nil
+      Selenium::WebDriver::Wait.new.until do
+        outdated_comment = driver.find_element(:id, 'discussion_r84420650')
       end
+      expect(outdated_comment).to be_displayed
+
+      driver.find_element(:class, 'epr-hide-outdated-comments').click
+      expect(outdated_comment).not_to be_displayed
     end
   end
 end
