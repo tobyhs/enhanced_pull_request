@@ -14,8 +14,10 @@ RSpec.describe 'Files changed page' do
     unless driver.find_element(:class, 'epr-one-file-diff').displayed?
       driver.find_element(:id, 'one-file-diff-btn').click
     end
-    link = "#{pr_url}?eprFocus=sandbox%2Fhello.rb"
-    expect(driver.find_element(:css, %(a[href="#{link}"]))).to be_displayed
+    link = "#{pr_url}#eprFocus=sandbox/hello.rb"
+    Selenium::WebDriver::Wait.new.until do
+      driver.find_element(:css, %(a[href="#{link}"])).displayed?
+    end
   end
 
   context 'on a one-file diff page' do
@@ -23,7 +25,7 @@ RSpec.describe 'Files changed page' do
 
     let(:pr_url) do
       'https://github.com/tobyhs/enhanced_pull_request/pull/1/files' \
-        "?eprFocus=#{file}"
+        "#eprFocus=#{file}"
     end
 
     it 'has a title with the file name' do

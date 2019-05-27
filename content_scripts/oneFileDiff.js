@@ -7,9 +7,7 @@ EnhancedPullRequest.oneFileDiff = {
     const diffLinks = $('div[data-path]').map(function () {
       const fileName = this.getAttribute('data-path');
       const url = new URL(location);
-      const params = new URLSearchParams();
-      params.set('eprFocus', fileName);
-      url.search = `?${params.toString()}`;
+      url.hash = `#eprFocus=${fileName}`;
 
       const link = $('<a class="epr epr-one-file-diff" data-skip-pjax/>')
         .attr({href: url}).text(fileName);
@@ -24,7 +22,10 @@ EnhancedPullRequest.oneFileDiff = {
       .append(oneFileDiffBtn)
       .prependTo('.diffbar');
 
-    const file = new URLSearchParams(location.search.slice(1)).get('eprFocus');
+    if (!location.hash.startsWith('#eprFocus=')) {
+      return;
+    }
+    const file = location.hash.split('=')[1];
     if (!file) return;
     const fileHeader = $(`div[data-path="${escape(file)}"]`)[0];
     if (!fileHeader) return;
