@@ -34,7 +34,8 @@ module EprSpecHelper
   #
   # @note This assumes the driver is on a page with the avatar dropdown menu
   def self.logout
-    avatar_icon = driver.find_element(:css, '.HeaderNavlink .avatar')
+    selector = 'summary[aria-label*="View profile"]'
+    avatar_icon = driver.find_element(:css, selector)
     avatar_icon.location_once_scrolled_into_view
     avatar_icon.click
     driver.find_element(:class, 'logout-form').click
