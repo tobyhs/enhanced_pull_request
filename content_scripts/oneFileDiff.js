@@ -34,9 +34,7 @@ EnhancedPullRequest.oneFileDiff = {
     document.title = `${file} - ${owner}/${repo} #${prNumber}`;
 
     $('.file.js-details-container').each(function () {
-      if (!$.contains(this, fileHeader)) {
-        this.style.display = 'none';
-      }
+      this.style.display = $.contains(this, fileHeader) ? '' : 'none';
     });
   }
 };

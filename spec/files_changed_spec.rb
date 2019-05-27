@@ -45,5 +45,30 @@ RSpec.describe 'Files changed page' do
         driver.find_element(:css, %(.file-header[data-path="#{file}"]))
       ).to be_displayed
     end
+
+    context 'after clicking a one-file diff link of another file' do
+      before do
+        driver.find_element(:id, 'one-file-diff-btn').click
+        url = "#{pr_url.sub(/#.*/, '')}#eprFocus=sandbox/hello.py"
+        link = driver.find_element(:css, %(a[href="#{url}"]))
+        Selenium::WebDriver::Wait.new.until { link.displayed? }
+        link.click
+      end
+
+      it 'only shows the diff of the selected file' do
+        Selenium::WebDriver::Wait.new.until do
+          !driver.
+            find_element(:css, '.file-header[data-path="sandbox/hello.rb"]').
+            displayed?
+        end
+
+        expect(
+          driver.find_element(
+            :css,
+            %(.file-header[data-path="sandbox/hello.py"]),
+          )
+        ).to be_displayed
+      end
+    end
   end
 end
